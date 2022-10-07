@@ -1,2 +1,3 @@
 # MCserver-script
-A repo of my scripts to make setting up Minecraft servers faster
+A place to get my script for installing a Minecraft server.
+### Under construction
