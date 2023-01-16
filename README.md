@@ -4,42 +4,23 @@ This is a script which simplifies installing a Minecraft server on Linux. Below 
 This script is designed to work on Ubuntu, to run it on other Distros you will need to run a few things manually however most of the script should still work. If you use Debian you will need to manually install Java. You should also be logged in as a user with sudo access, however not the root user itself.
 
 # What does the script do?
-You can read through the script in a text editor, but a high level view is that it downloads the needed packages, then creates a server directory for you. After that it starts optional parts, including creating a file that agrees to the MC eula, downloading a server jar directly from a link, as well as working with the fabric installer. It also creates a start script for you.
+You can read through the script in a text editor, but a high level view is that it downloads the needed packages, then creates a server directory for you, and creates some files automatically including a launch script and the eula file so you don't have to do that by hand. After this it asks if you are using Fabric or not, this is because the Fabric server jar is installed using an installer, if you say yes it will ask you for a link to the Fabric Installer jar, when you enter it you are prompted for the MC version you want and the script handles the rest! If you say no and are not using Fabric it will ask for the download link to your server jar and download it with a file name to work with our launch script.
 
 # Installation
-You can install the script in 5 simple commands! Just copy and paste
+You can install the script in 4 simple commands! Just copy and paste. If the first command says it cannot find the command you need to install git with your package manager (sudo apt install git or sudo yum install git)
 
-Install the Git commands packages
+`git clone https://github.com/LazyKB/mc-installer/`
 
-`sudo apt update && sudo apt install git`
-
-Clone this repository
-
-`git clone https://github.com/LazyKB/MCserver-script/`
-
-CD in to the directory
-
-`cd MCserver-script`
-
-Make the script executable
+`cd mc-installer`
 
 `chmod +x mc_server.sh`
 
-Run the Script!
-
 `./mc_server.sh`
 
-# How to use the server after running the script
+# How to use the server after running the script (tmux)
 
-Once the server is installed it is ready to use! There are multiple ways to do this but the simplest way to do it is with a screen instance. The script install screen for you automatically, so all you have to do is cd into your server directory and start a screen instance. The screen name does not have to match the directory name.
+### Why we use tmux?
+At the start of the script we installed tmux which allows us to keep the server running in its own instance. This is important when using ssh to control your server since without the server running would be tied to your ssh session and thus close when the ssh session is ended.
 
-`cd <directory>`
-`screen -S server`
-
-This will open a new window, and in this window you can run your start script
-
-`./start.sh`
-
-Your server should start! After you're done with looking at the Minecraft logs you can press `ctrl A+D`
-
-Whenever you need to look at the Minecraft logs again you need to run `screen -r server` to reconnect. Running -S will make a new screen with the same name and be annoying so make sure you use the right command!
+### How to operate tmux
+Tmux works in a very simple way. If you are not using tmux for anything else you simply enter `tmux` to start a new window, doing so will also automatically attach you to it, you shold see a bar at the bottom of the terminal indicating you are in a tmux window. From here you will want to enter your server directory by using `cd server`. If you are ever lost in what directory you are in you can enter `cd $HOME/server` to get back to your server directory. Once you are there do ./start.sh and the server will launch and you will be put into the Minecraft console. To escape the tmux window you can do the key combination `ctrl b+d` if it doesn't work type the d after the b.
