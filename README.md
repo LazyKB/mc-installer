@@ -4,7 +4,7 @@ This is a script which simplifies installing a Minecraft server on Linux. Below 
 This script is designed to work on Ubuntu, to run it on other Distros you will need to run a few things manually however most of the script should still work. If you use Debian you will need to manually install Java. You should also be logged in as a user with sudo access, however not the root user itself.
 
 # What does the script do?
-You can read through the script in a text editor, but a high level view is that it downloads the needed packages, then creates a server directory for you, and creates some files automatically including a launch script and the eula file so you don't have to do that by hand. After this it asks if you are using Fabric or not, this is because the Fabric server jar is installed using an installer, if you say yes it will ask you for a link to the Fabric Installer jar, when you enter it you are prompted for the MC version you want and the script handles the rest! If you say no and are not using Fabric it will ask for the download link to your server jar and download it with a file name to work with our launch script.
+You can read through the script in a text editor, but a high level view is that it downloads the needed packages, then creates a server directory for you, and creates some files automatically including a launch script and the eula file so you don't have to do that by hand. After this it asks if you are using Fabric or not, this is because the Fabric server jar is installed using an installer, if you say yes it will ask you for a link to the Fabric Installer jar, when you enter it you are prompted for the MC version you want and the script handles the rest! If you say no and are not using Fabric it will ask for the download link to your server jar and download it with a file name to work with our launch script. A proper install link will end with `.jar`.
 
 # Installation
 You can install the script in 4 simple commands! Just copy and paste. If the first command says it cannot find the command you need to install git with your package manager (sudo apt install git or sudo yum install git)
@@ -37,4 +37,4 @@ To add mods or plugins to the server you will want to add the .jar files to the 
 This doesn't always work though, and can be slow if you want to add a lot of mods.
 
 ### Adding mods or plugins using Filezilla
-If you want a GUI for adding files from your own computer to the server you can make use of [Filezilla](https://filezilla-project.org/)
+If you want a GUI for adding files from your own computer to the server you can make use of [Filezilla](https://filezilla-project.org/) which can connect to your server with the sftp protocol, using the same login method you used to access ssh, which will allow you to download mods to your own computer and then add them to the server.
