@@ -5,11 +5,11 @@ This script is designed to work on Ubuntu, to run it on other Distros you will n
 
 You may need some packages from your package manager to begin the installation process. Some easy commands for you to copy if they help
 
-Debian/Ubuntu:
-sudo apt update && sudo apt install git sudo -y
+#### Debian/Ubuntu:
+`sudo apt update && sudo apt install git sudo -y`
 
-Alpine
-sudo apk update && sudo apk add git sudo bash
+#### Alpine
+`sudo apk update && sudo apk add git sudo bash`
 
 Having SSH access to your server will also help with adding files to it after the installation, however is not a hard requirement
 
