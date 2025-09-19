@@ -3,6 +3,14 @@ This is a script which simplifies installing a Minecraft server on Linux. Below 
 # Prerequisites
 This script is designed to work on Ubuntu, to run it on other Distros you will need to run a few things manually however most of the script should still work. If you use Debian you will need to manually install Java. You should also be logged in as a user with sudo access, however not the root user itself.
 
+You may need some packages from your package manager to begin the installation process. Some easy commands for you to copy if they help
+
+Debian/Ubuntu:
+sudo apt update && sudo apt install git sudo -y
+
+Alpine
+sudo apk update && sudo apk add git sudo bash
+
 Having SSH access to your server will also help with adding files to it after the installation, however is not a hard requirement
 
 # What does the script do?
