@@ -3,6 +3,8 @@ This is a script which simplifies installing a Minecraft server on Linux. Below 
 # Prerequisites
 This script is designed to work on Ubuntu, to run it on other Distros you will need to run a few things manually however most of the script should still work. If you use Debian you will need to manually install Java. You should also be logged in as a user with sudo access, however not the root user itself.
 
+Having SSH access to your server will also help with adding files to it after the installation, however is not a hard requirement
+
 # What does the script do?
 You can read through the script in a text editor, but a high level view is that it downloads the needed packages, then creates a server directory for you, and creates some files automatically including a launch script and the eula file so you don't have to do that by hand. After this it asks if you are using Fabric or not, this is because the Fabric server jar is installed using an installer, if you say yes it will ask you for a link to the Fabric Installer jar, when you enter it you are prompted for the MC version you want and the script handles the rest! If you say no and are not using Fabric it will ask for the download link to your server jar and download it with a file name to work with our launch script. A proper install link will end with `.jar`.
 
