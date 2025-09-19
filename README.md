@@ -24,3 +24,17 @@ At the start of the script we installed tmux which allows us to keep the server 
 
 ### How to operate tmux
 Tmux works in a very simple way. If you are not using tmux for anything else you simply enter `tmux` to start a new window, doing so will also automatically attach you to it, you shold see a bar at the bottom of the terminal indicating you are in a tmux window. From here you will want to enter your server directory by using `cd server`. If you are ever lost in what directory you are in you can enter `cd $HOME/server` to get back to your server directory. Once you are there do ./start.sh and the server will launch and you will be put into the Minecraft console. To escape the tmux window you can do the key combination `ctrl b+d` if it doesn't work type the d after the b.
+
+# After Installation
+
+### Server running slow?
+It is HIGHLY reccommended for most servers to change the `sync-chunk-writes` setting to false in server.properties. To do so enter `cd server` and then `nano server.properties` if you can't find the `server` directory, enter `cd` and try again, this returns you to your home directory where `server` is located.
+
+This setting makes it so that the game does not batch huge amounts of disk writes together, which reduces lag spikes when loading chunks, however introduces a small chance for corruption in the event of a sudden shutdown during a write. Backups are always reccommended!
+
+### Adding mods or plugins with wget
+To add mods or plugins to the server you will want to add the .jar files to the `mods` or `plugins` directory depending on your server type. Some sites like Modrinth allow copying the link from their download buttons, and using wget to download it directly from the CLI, IE `wget <pasted download link.jar>`
+This doesn't always work though, and can be slow if you want to add a lot of mods.
+
+### Adding mods or plugins using Filezilla
+If you want a GUI for adding files from your own computer to the server you can make use of [Filezilla](https://filezilla-project.org/)
